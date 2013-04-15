@@ -1,6 +1,6 @@
 # Blocstrap
 
-TODO: Write a gem description
+Blocstrap provides a scaffold of styling for Bloc apps.
 
 ## Installation
 
@@ -8,17 +8,17 @@ Add this line to your application's Gemfile:
 
     gem 'blocstrap'
 
-And then execute:
+If you don't have Compass set up, you'll want to add a config file to load Compass:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install blocstrap
+    $ echo "project_type = :rails" > config/compass.rb
 
 ## Usage
 
-TODO: Write usage instructions here
+In your sass stylesheets, you can include Blocstrap with:
+
+    @import "blocstrap"
+    
+    // other styles
 
 ## Contributing
 
