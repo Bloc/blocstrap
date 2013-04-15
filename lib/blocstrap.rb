@@ -1,5 +1,5 @@
 require "blocstrap/version"
+require "blocstrap/engine"
 
 module Blocstrap
-  # Your code goes here...
 end

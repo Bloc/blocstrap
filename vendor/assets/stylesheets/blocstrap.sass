@@ -1,0 +1,244 @@
+@import "compass"
+
+$vertical_gutter: 20px
+
+$size-1: 44px
+$size-2: 38px
+$size-3: 32px
+$size-4: 24px
+$size-5: 18px
+$size-6: 14px
+
+$type_color: rgb(241,231,216)
+$brown: rgb(99,90,76)
+$dark_brown: rgb(92,68,49)
+$tan: rgb(232,220,199)
+$green: rgb(40,146,39)
+$yellow: rgb(206, 193, 99)
+$transparentGreen: rgba(40,146,39, 0.1)
+$red: rgb(203,24,24)
+$lightGray: #ccc
+$black: #202020
+$pageGray: #777
+$referral_highlight: rgb(211, 83, 83)
+$width: 940px
+
+@mixin noisy-background($color)
+  background-color: $color
+  background-image: image-url("noisy-texture.png")
+
+@mixin black-background
+  +noisy-background(#2a2a2a)
+
+h1
+  font-size: $size-1
+h2
+  font-size: $size-2
+h3
+  font-size: $size-3
+h4
+  font-size: $size-4
+h5
+  font-size: $size-5
+h6
+  font-size: $size-6
+
+.blocstrap
+  h1, h2, h3, h4, h5, h6, p
+    margin: $vertical_gutter 0 !important
+  h1,h2,h3,h4,h5,h6
+    font-family: Museo Sans
+    &.title
+      text-align: center
+  p
+    font-size: $size-5
+    line-height: 150%
+  form
+    &.inline
+      display: inline
+    .inline
+      label
+        display: inline-block
+        width: 200px
+  a.button
+    font-weight: bold
+  ol, ul
+    li
+      line-height: 150%
+      margin: $vertical_gutter 0 $vertical_gutter 20px
+  ol
+    list-style: decimal
+  select, input[type="text"], textarea
+    +transition(all 0.25s ease-in-out)
+    &:focus
+      outline: none
+      +box-shadow(0 0 5px $green)
+      border: lighten($green, 5) 1px solid
+  input[type="text"], textarea
+    background: rgba(0,0,0,0.05)
+    border: 1px solid #666
+    &.markdown
+      font-family: Monaco, monospace
+  select
+    height: 30px
+    background: transparent
+    border-color: #AAA
+    font-size: 14px
+  textarea
+    padding: 10px
+    font-size: $size-6
+  table
+    width: 100%
+    tr:nth-child(even)
+      background: rgba(0,0,0, 0.05)
+    tr.section
+      background: none
+      th
+        padding-top: 40px
+    th
+      font-weight: bold
+      font-size: $size_4
+      padding-top: 1em
+    td, th
+      padding-bottom: 1em
+    th
+      font-size: 18px
+      padding: 10px
+    td
+      padding: 10px
+    .active
+      color: $green
+    .inactive
+      color: $red
+  .bar
+    color: $type_color
+    +text-shadow(none)
+    +black-background
+    padding: $vertical_gutter*2
+    p
+      color: $type_color
+    pre
+      background: transparentize(white, 0.3)
+    .section
+      background: rgba(255,255,255,0.05)
+      border: 1px solid rgba(255,255,255,0.05)
+      padding: 20px
+    textarea
+      color: $type_color
+    .thread
+      background: rgba(255,255,255,0.05)
+      li
+        border: 1px solid rgba(255,255,255,0.05)
+        &:last-child
+          border-bottom: 1px solid rgba(255,255,255,0.05)
+
+  .facepile
+    img
+      margin-right: 23px
+      margin-bottom: 23px
+      float: left
+    a
+      img
+        border: 2px solid transparent
+        &:hover
+          border: 2px solid $green
+      &.selected
+        img
+          border: 2px solid $green
+
+    .left
+      float: left
+      p
+        text-align: left
+    .right
+      border-left: 1px solid rgba(0,0,0,0.1)
+      float: right
+      padding-left: 15px
+      p
+        text-align: center
+  .screen
+    background-color: rgba(0, 0, 0, 0.05)
+    padding: $vertical_gutter*2
+    border: 1px solid rgba(0,0,0,0.25)
+  .container
+    width: $width
+    margin: 0 auto
+    &.full
+      width: auto
+      margin: 0 20px
+  .thread
+    background: rgba(0,0,0,0.05)
+    list-style: none
+    margin: 20px 0
+    a
+      text-decoration: none
+    li
+      border: 1px solid rgba(0,0,0,0.05)
+      border-bottom: none
+      margin: 0 !important
+      padding: 20px
+      img
+        float: left
+        margin-right: 20px
+      .facepile
+        margin-right: 20px
+        float: left
+        width: 75px
+      .name
+        margin-top: 0
+      .body
+        line-height: 140%
+        float: left
+        width: 600px
+        p
+          margin: 10px 0
+          font-size: 12pt
+        &.small
+          width: 400px
+          margin-left: 20px
+      .time_ago
+        color: $pageGray
+      &:last-child
+        border-bottom: 1px solid rgba(0,0,0,0.05)
+
+  .alert-success, .mock-alert-success
+    text-align: center
+    color: white
+    display: none
+    width: 100%
+    position: fixed
+    top: 0
+    background: transparentize($green, 0.1)
+    padding: 20px
+    z-index: 1
+  .dropdown
+    display: none
+    +black-background
+    border: 1px solid black
+    z-index: 99
+    padding: 10px
+    +border-radius(2px)
+    +box-shadow(0 0 5px rgb(51,51,51), inset 0 0 1px rgba(255,255,255,0.5))
+
+  .labs-indicator
+    .icon-beaker:before
+      display: inline
+    .tooltip
+      display: none
+  
+#tiptip_holder
+  #tiptip_content
+    +box-shadow(none)
+    background-image: none
+    +black-background
+    text-shadow: none
+    text-align: center
+    h5,h6
+      font-family: Museo Slab
+      font-style: italic
+    h5
+      color: #ede0ca
+      font-size: 14px
+    h6
+      font-size: 12px
+      color: #bab3a8
