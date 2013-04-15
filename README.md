@@ -6,19 +6,25 @@ Blocstrap provides a scaffold of styling for Bloc apps.
 
 Add this line to your application's Gemfile:
 
-    gem 'blocstrap'
+```ruby
+gem 'blocstrap'
+```
 
 If you don't have Compass set up, you'll want to add a config file to load Compass:
 
-    $ echo "project_type = :rails" > config/compass.rb
+```shell
+$ echo "project_type = :rails" > config/compass.rb
+```
 
 ## Usage
 
 In your sass stylesheets, you can include Blocstrap with:
 
-    @import "blocstrap"
-    
-    // other styles
+```sass
+@import "blocstrap"
+
+# other styles
+```
 
 ## Contributing
 
