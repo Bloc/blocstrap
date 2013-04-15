@@ -23,7 +23,7 @@ In your sass stylesheets, you can include Blocstrap with:
 ```sass
 @import "blocstrap"
 
-# other styles
+// other styles
 ```
 
 ## Contributing
