@@ -56,6 +56,8 @@ $width: 940px
 @mixin black-background
   +noisy-background(#2a2a2a)
 
+
+
 h1
   font-size: $size-1
 h2
@@ -113,6 +115,19 @@ h6
   textarea
     padding: 10px
     font-size: $size-6
+  pre
+    background: rgba(0,0,0,0.05)
+    border: 1px solid #ccc
+    margin: 20px 0
+    padding: 10px
+  code
+    font-family: Monaco, Menlo, 'Ubuntu Mono', 'Droid Sans Mono', 'Consolas', monospace
+    line-height: 18px
+    font-size: 14px
+    text-shadow: none
+    padding: 0.3em 0.5em
+    font-weight: bold
+ 
   table
     width: 100%
     tr:nth-child(even)
